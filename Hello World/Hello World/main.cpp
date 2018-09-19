@@ -18,7 +18,8 @@ int main(int argc, const char * argv[]) {
     fileReader.open("TestMessage.txt"); //In the Debug folder from right clicking Hello World and show in finder of the of the PRODUCTS folder.
     std::string outPut;
     std::vector<std::string> outPutVec;
-    while(fileReader >> outPut) {
+    while(!fileReader.eof()) {
+        getline(fileReader, outPut);
         outPutVec.push_back(outPut);
     }
     for (int i = outPutVec.size(); i--; i >=0) {
